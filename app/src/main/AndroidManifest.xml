@@ -5,11 +5,11 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".app.MainActivity">
+        android:theme="@style/Theme.Design">
+        <activity android:name=".app.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +23,8 @@
         <activity
             android:name=".app.TreinoActivity"
             android:parentActivityName=".app.MainActivity" />
-        <activity android:name=".app.AtividadeActivity"></activity>
+        <activity android:name=".app.AtividadeActivity" />
+        <activity android:name=".app.MainActivity"></activity>
     </application>
 
 </manifest>
