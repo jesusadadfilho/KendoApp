@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">KendoTrannig</string>
+    <string name="nome">nome</string>
+    <string name="tempo">tempo</string>
+    <string name="nivel">Nivel</string>
+    <string name="exercicios">Exercicios</string>
+    <string name="treinos">Treinos</string>
+</resources>

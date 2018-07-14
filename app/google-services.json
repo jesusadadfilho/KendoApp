@@ -1,0 +1,187 @@
+{
+  "project_info": {
+    "project_number": "359367870894",
+    "firebase_url": "https://kendo-tranning.firebaseio.com",
+    "project_id": "kendo-tranning",
+    "storage_bucket": "kendo-tranning.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359367870894:android:a801612e7ec05f39",
+        "android_client_info": {
+          "package_name": "com.example.aluno.kendotranning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359367870894-e04mchgo9rli31sto10kplepfbfi2hd8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aluno.kendotranning",
+            "certificate_hash": "1033087c69082c24e4f63336ccd905c928ff0325"
+          }
+        },
+        {
+          "client_id": "359367870894-jpq9i2rj6lgmmutcnmg8oi79hv8622fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdP4KW2K25REg4-5yRKr1QHKyJALlPVig"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359367870894-jpq9i2rj6lgmmutcnmg8oi79hv8622fs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359367870894:android:ee3a767fa18e90b4",
+        "android_client_info": {
+          "package_name": "com.example.jesus.kedontrannig"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359367870894-renk82dk3b32t6g43dtqlmmomt4rlbt6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jesus.kedontrannig",
+            "certificate_hash": "970550e6e69029c66d63aac4448138c4de451627"
+          }
+        },
+        {
+          "client_id": "359367870894-jpq9i2rj6lgmmutcnmg8oi79hv8622fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdP4KW2K25REg4-5yRKr1QHKyJALlPVig"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359367870894-jpq9i2rj6lgmmutcnmg8oi79hv8622fs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359367870894:android:4d008d325806b5ff",
+        "android_client_info": {
+          "package_name": "com.example.jesus.kendocompanion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359367870894-7gq3fn50csjt8fpuu95ons15ilvaa96f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jesus.kendocompanion",
+            "certificate_hash": "970550e6e69029c66d63aac4448138c4de451627"
+          }
+        },
+        {
+          "client_id": "359367870894-jpq9i2rj6lgmmutcnmg8oi79hv8622fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdP4KW2K25REg4-5yRKr1QHKyJALlPVig"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359367870894-jpq9i2rj6lgmmutcnmg8oi79hv8622fs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359367870894:android:f08439336c540cf8",
+        "android_client_info": {
+          "package_name": "com.example.jesus.kendotrannig"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359367870894-rr4t200cu8hchr3ea4ikmdhsoi3vq04f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jesus.kendotrannig",
+            "certificate_hash": "a167b28a4ec46c878428379cb544f3ab44101761"
+          }
+        },
+        {
+          "client_id": "359367870894-jpq9i2rj6lgmmutcnmg8oi79hv8622fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdP4KW2K25REg4-5yRKr1QHKyJALlPVig"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359367870894-jpq9i2rj6lgmmutcnmg8oi79hv8622fs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
