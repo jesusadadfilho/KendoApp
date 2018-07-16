@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,26 +8,34 @@
     tools:context=".app.LoginActivity"
     android:background="@drawable/login"
     android:clickable="true">
+
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/cardview_dark_background"
         android:alpha="0.6"
-        android:onClick="singIn"
         />
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/singin_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true">
-
-        </com.google.android.gms.common.SignInButton>
-    </RelativeLayout>
 
 
-</android.support.design.widget.CoordinatorLayout>
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/singin_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="teste">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:onClick="singIn"/>
+    </com.google.android.gms.common.SignInButton>
+
+
+
+
+
+
+
+</RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.jesus.kendotrannig.app;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
@@ -26,6 +27,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private SignInButton signInButton;
     private GoogleApiClient mGoogleApiClient;
     public SharedPreferences preferences;
+    public SharedPreferences.Editor editor;
     private static final String TAG = "signInActivity";
     private static final int RC_SIGN_IN = 9001;
     private static final int SIGIN_IN_CODE = 777;
@@ -36,7 +38,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        preferences = getSharedPreferences("reader.file", MODE_PRIVATE);
+        preferences = getSharedPreferences("dados.file", Context.MODE_PRIVATE);
+        editor = preferences.edit();
         setupViews();
 
 
@@ -49,6 +52,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 .enableAutoManage(this, this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
+
 
     }
 
@@ -71,15 +75,14 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         Log.d(TAG, "onConnectFalied: " + result.isSuccess());
         if (result.isSuccess()){
             GoogleSignInAccount account = result.getSignInAccount();
-            SharedPreferences.Editor editor = preferences.edit();
             editor.putString("userName", account.getDisplayName());
             editor.putString("userImageUrl", account.getPhotoUrl().toString());
             editor.putString("userEmail", account.getEmail());
             editor.putString("userId", account.getId());
             editor.apply();
-            Toast.makeText(this, "Bem vindo : " + account.getEmail() +"!" ,Toast.LENGTH_SHORT).show();
-            //startActivity(new Intent(this, MainActivity.class));
-            //finish();
+            Toast.makeText(this, "Bem vindo : " + account.getDisplayName() +"!" ,Toast.LENGTH_LONG).show();
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
 
 
         }
@@ -92,6 +95,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     public void singIn(View view) {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
-        //Toast.makeText(this, "Clicando",Toast.LENGTH_SHORT).show();
+    }
+
+    public void teste(View view){
+        Toast.makeText(this, "Clicando" ,Toast.LENGTH_LONG).show();
     }
 }

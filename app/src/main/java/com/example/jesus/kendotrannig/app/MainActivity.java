@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.jesus.kendotrannig.R;
@@ -26,18 +27,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextView userNameText, emailText;
     private ImageView userImage;
     public SharedPreferences preferences;
+    public SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        preferences = getSharedPreferences("dados.file", MODE_PRIVATE);
+        editor = preferences.edit();
         setupViews();
         setupDrawer();
-        preferences = getSharedPreferences("reader.file", MODE_PRIVATE);
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch (id){
+            case R.id.singout:
+                startActivity(new Intent(this, LoginActivity.class));
+                editor.clear();
+                editor.apply();
+                finish();
+        }
         return false;
     }
 
@@ -64,15 +75,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         navigationView.setNavigationItemSelectedListener(this);
-        /*if (!preferences.getString("userName"," ").equals(" ") &&
-                !preferences.getString("userImageUrl"," ").equals(" ") &&
-                !preferences.getString("userEmail"," ").equals(" "))
-        {
-            userNameText.setText(preferences.getString("userName","invalido"));
-            emailText.setText(preferences.getString("userEmail","invalido"));
-            Glide.with(this).load(preferences.getString("userImageUrl","https://firebasestorage.googleapis.com/v0/b/kendo-tranning.appspot.com/o/icon_not_found.png?alt=media&token=7ef72b7c-e316-4d8f-8fa0-5c0e119ec94a")).into(userImage);
-
-        }*/
+        userNameText.setText(preferences.getString("userName","invalido"));
+        emailText.setText(preferences.getString("userEmail","invalido"));
+        Glide.with(this)
+                .load(preferences.getString("userImageUrl","https://firebasestorage.googleapis.com/v0/b/kendo-tranning.appspot.com/o/icon_not_found.png?alt=media&token=7ef72b7c-e316-4d8f-8fa0-5c0e119ec94a"))
+                .into(userImage);
     }
 
     public void irParaTreinos(View view) {
