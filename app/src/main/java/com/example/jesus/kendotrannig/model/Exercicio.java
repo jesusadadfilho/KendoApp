@@ -7,7 +7,6 @@ public class Exercicio implements Comparable<Exercicio> {
     private int Nivel;
     private String Descricao;
     private String Nome;
-    private int Tempo;
     private int GastoCalorico;
     private String Imagem;
     private int id;
@@ -39,13 +38,6 @@ public class Exercicio implements Comparable<Exercicio> {
         Nome = nome;
     }
 
-    public int getTempo() {
-        return Tempo;
-    }
-
-    public void setTempo(int tempo) {
-        Tempo = tempo;
-    }
 
     public int getGastoCalorico() {
         return GastoCalorico;

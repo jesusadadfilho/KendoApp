@@ -53,6 +53,7 @@ public class ExerciciosActivity extends AppCompatActivity {
         exerciciosRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                exercicioList.clear();
                 for (DataSnapshot registro : dataSnapshot.getChildren()){
                     Exercicio exercicio = registro.getValue(Exercicio.class);
                     exercicioList.add(exercicio);

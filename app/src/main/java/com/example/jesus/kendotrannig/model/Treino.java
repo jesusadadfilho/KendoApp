@@ -4,24 +4,23 @@ import java.util.Date;
 import java.util.List;
 
 public class Treino {
-    private long userId;
+    private String userId;
     private List<Exercicio> exercicioList;
-    private String data;
+    private Date data;
 
     public Treino() {
     }
 
-    public Treino(long userId, List<Exercicio> exercicioList, String data) {
+    public Treino(String userId, List<Exercicio> exercicioList) {
         this.userId = userId;
         this.exercicioList = exercicioList;
-        this.data = data;
     }
 
-    public long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -33,11 +32,11 @@ public class Treino {
         this.exercicioList = exercicioList;
     }
 
-    public String getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(Date data) {
         this.data = data;
     }
 }
