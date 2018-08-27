@@ -67,6 +67,6 @@ public class TreinoActivity extends AppCompatActivity {
     }
 
     public void goToVideo(View view) {
-        startActivity(new Intent(this, ReproducaoActivity.class));
+        startActivity(new Intent(this, AtividadeActivity.class));
     }
 }

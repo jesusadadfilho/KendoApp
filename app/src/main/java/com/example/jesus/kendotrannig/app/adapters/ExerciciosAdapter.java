@@ -42,7 +42,7 @@ public class ExerciciosAdapter extends RecyclerView.Adapter<ExerciciosAdapter.Ex
         Exercicio exercicio = this.exercicioList.get(position);
 
         holder.nomeExercicio.setText(exercicio.getNome());
-        holder.tempoExercicio.setText(exercicio.getTempo() + " min(s)");
+        //holder.tempoExercicio.setText(exercicio.getTempo() + " min(s)");
         holder.nivelExercicio.setText("Nivel : " + exercicio.getNivel());
         Glide.with(context).load(exercicio.getImagem()).into(holder.imagemExercicio);
 
