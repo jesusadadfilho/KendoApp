@@ -1,38 +1,50 @@
 package com.example.jesus.kendotrannig.app;
 
-import android.media.MediaPlayer;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.widget.MediaController;
-import android.widget.VideoView;
+import android.widget.Toast;
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerFragment;
 
 import com.example.jesus.kendotrannig.R;
 
-public class ReproducaoActivity extends AppCompatActivity {
+public class ReproducaoActivity extends YouTubeBaseActivity  {
 
-    VideoView videoView;
-    MediaController mediaController;
+    public static final String API_KEY = "AIzaSyBx7v0YOb140fDO7EbfMx4l87raxezDWFw";
+
+    public static String VIDEO_ID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reproducao);
+        VIDEO_ID = getIntent().getStringExtra("link");
 
-        videoView = findViewById(R.id.video_view);
-        mediaController = new MediaController(this);
-        mediaController.setAnchorView(videoView);
-        String path = "https://www.youtube.com/watch?v=xvaAASh1JDc";
-        Uri uri = Uri.parse(path);
-        videoView.setVideoURI(uri);
+        //Initializing and adding YouTubePlayerFragment
+        FragmentManager fm = getFragmentManager();
+        String tag = YouTubePlayerFragment.class.getSimpleName();
+        YouTubePlayerFragment playerFragment = (YouTubePlayerFragment) fm.findFragmentByTag(tag);
+        if (playerFragment == null) {
+            FragmentTransaction ft = fm.beginTransaction();
+            playerFragment = YouTubePlayerFragment.newInstance();
+            ft.add(android.R.id.content, playerFragment, tag);
+            ft.commit();
+        }
 
-        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        playerFragment.initialize(API_KEY, new YouTubePlayer.OnInitializedListener() {
             @Override
-            public void onCompletion(MediaPlayer mp) {
-                videoView.start();
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+                youTubePlayer.cueVideo(VIDEO_ID);
+            }
+
+            @Override
+            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+                Toast.makeText(ReproducaoActivity.this, "Error while initializing YouTubePlayer.", Toast.LENGTH_SHORT).show();
             }
         });
-
-        videoView.start();
 
 
     }

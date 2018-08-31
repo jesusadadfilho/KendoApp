@@ -10,6 +10,8 @@ public class Exercicio implements Comparable<Exercicio> {
     private int GastoCalorico;
     private String Imagem;
     private int id;
+    private int Tempo;
+    private String VideoLink;
 
     public Exercicio() {
     }
@@ -59,8 +61,24 @@ public class Exercicio implements Comparable<Exercicio> {
         return id;
     }
 
+    public int getTempo() {
+        return Tempo;
+    }
+
+    public void setTempo(int tempo) {
+        Tempo = tempo;
+    }
+
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getVideoLink() {
+        return VideoLink;
+    }
+
+    public void setVideoLink(String videoLink) {
+        VideoLink = videoLink;
     }
 
     @Override

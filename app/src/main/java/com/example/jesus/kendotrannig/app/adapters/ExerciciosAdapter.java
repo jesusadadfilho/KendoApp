@@ -1,6 +1,7 @@
 package com.example.jesus.kendotrannig.app.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,9 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.jesus.kendotrannig.R;
+import com.example.jesus.kendotrannig.app.ReproducaoActivity;
 import com.example.jesus.kendotrannig.model.Exercicio;
 
 import java.util.Collections;
@@ -39,12 +42,17 @@ public class ExerciciosAdapter extends RecyclerView.Adapter<ExerciciosAdapter.Ex
 
     @Override
     public void onBindViewHolder(@NonNull ExerciciosViewHolder holder, int position) {
-        Exercicio exercicio = this.exercicioList.get(position);
+        final Exercicio exercicio = this.exercicioList.get(position);
 
         holder.nomeExercicio.setText(exercicio.getNome());
-        //holder.tempoExercicio.setText(exercicio.getTempo() + " min(s)");
         holder.nivelExercicio.setText("Nivel : " + exercicio.getNivel());
         Glide.with(context).load(exercicio.getImagem()).into(holder.imagemExercicio);
+        holder.itemView.setOnClickListener( (view -> {
+            final Intent intent = new Intent(context,ReproducaoActivity.class);
+            intent.putExtra("link", exercicio.getVideoLink());
+            context.startActivity(intent);
+        }));
+
 
     }
 
@@ -52,6 +60,7 @@ public class ExerciciosAdapter extends RecyclerView.Adapter<ExerciciosAdapter.Ex
     public int getItemCount() {
         return this.exercicioList.size();
     }
+
 
     public class ExerciciosViewHolder extends RecyclerView.ViewHolder{
 
