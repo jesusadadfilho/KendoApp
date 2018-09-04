@@ -1,6 +1,9 @@
 package com.example.jesus.kendotrannig.app.adapters;
 
+import android.app.AlertDialog;
+import android.app.DialogFragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +16,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.jesus.kendotrannig.R;
+import com.example.jesus.kendotrannig.app.ExecicioViewActivity;
 import com.example.jesus.kendotrannig.app.ReproducaoActivity;
 import com.example.jesus.kendotrannig.model.Exercicio;
 
@@ -48,13 +52,23 @@ public class ExerciciosAdapter extends RecyclerView.Adapter<ExerciciosAdapter.Ex
         holder.nivelExercicio.setText("Nivel : " + exercicio.getNivel());
         Glide.with(context).load(exercicio.getImagem()).into(holder.imagemExercicio);
         holder.itemView.setOnClickListener( (view -> {
-            final Intent intent = new Intent(context,ReproducaoActivity.class);
+            Intent intent = new Intent(context,ExecicioViewActivity.class);
             intent.putExtra("link", exercicio.getVideoLink());
+            intent.putExtra("nome", exercicio.getNome());
+            intent.putExtra("tempo", exercicio.getTempo());
+            intent.putExtra("exercicioId", exercicio.getId());
+            intent.putExtra("imagemLink", exercicio.getImagem());
             context.startActivity(intent);
         }));
 
+        holder.itemView.setOnLongClickListener( (view -> {
+            Toast.makeText(context,exercicio.getNome(),Toast.LENGTH_SHORT).show();
+            return true;
+        }));
 
-    }
+
+
+}
 
     @Override
     public int getItemCount() {
@@ -62,7 +76,7 @@ public class ExerciciosAdapter extends RecyclerView.Adapter<ExerciciosAdapter.Ex
     }
 
 
-    public class ExerciciosViewHolder extends RecyclerView.ViewHolder{
+    public static class ExerciciosViewHolder extends RecyclerView.ViewHolder{
 
         private TextView nomeExercicio, tempoExercicio, nivelExercicio;
         private ImageView imagemExercicio;

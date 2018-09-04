@@ -1,16 +1,25 @@
 package com.example.jesus.kendotrannig.model;
 
-public class ExecercioRealizado {
-    private Exercicio exercicio;
-    private int tempo;
-    private String id;
+import android.support.annotation.NonNull;
 
-    public Exercicio getExercicio() {
-        return exercicio;
+import com.example.jesus.kendotrannig.app.ExecicioViewActivity;
+
+import java.util.Date;
+import java.util.List;
+
+public class ExecercioRealizado implements Comparable<ExecercioRealizado> {
+    private int exercicioId;
+    private int tempo;
+    private Date dataRealizada;
+
+
+
+    public int getExercicioId() {
+        return exercicioId;
     }
 
-    public void setExercicio(Exercicio exercicio) {
-        this.exercicio = exercicio;
+    public void setExercicioId(int exercicioId) {
+        this.exercicioId = exercicioId;
     }
 
     public int getTempo() {
@@ -21,11 +30,17 @@ public class ExecercioRealizado {
         this.tempo = tempo;
     }
 
-    public String getId() {
-        return id;
+    public Date getDataRealizada() {
+        return dataRealizada;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setDataRealizada(Date dataRealizada) {
+        this.dataRealizada = dataRealizada;
+    }
+
+
+    @Override
+    public int compareTo(@NonNull ExecercioRealizado execercioRealizado) {
+        return getDataRealizada().compareTo(execercioRealizado.dataRealizada);
     }
 }

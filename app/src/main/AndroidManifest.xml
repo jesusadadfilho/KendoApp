@@ -27,7 +27,9 @@
             android:parentActivityName=".app.MainActivity" />
         <activity android:name=".app.AtividadeActivity" />
         <activity android:name=".app.MainActivity" />
-        <activity android:name=".app.ReproducaoActivity"></activity>
+        <activity android:name=".app.ReproducaoActivity" />
+        <activity android:name=".app.ExecicioViewActivity" />
+        <activity android:name=".app.itens.ExercicioRealizadoViewHolderActivity"></activity>
     </application>
 
 </manifest>
