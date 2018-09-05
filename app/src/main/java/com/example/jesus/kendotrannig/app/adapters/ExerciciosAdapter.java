@@ -58,6 +58,7 @@ public class ExerciciosAdapter extends RecyclerView.Adapter<ExerciciosAdapter.Ex
             intent.putExtra("tempo", exercicio.getTempo());
             intent.putExtra("exercicioId", exercicio.getId());
             intent.putExtra("imagemLink", exercicio.getImagem());
+            intent.putExtra("descricao",exercicio.getDescricao());
             context.startActivity(intent);
         }));
 
