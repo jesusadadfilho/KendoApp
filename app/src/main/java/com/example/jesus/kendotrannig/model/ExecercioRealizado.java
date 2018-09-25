@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ExecercioRealizado implements Comparable<ExecercioRealizado> {
     private int exercicioId;
-    private int tempo;
+    private String tempo;
     private Date dataRealizada;
 
 
@@ -22,11 +22,11 @@ public class ExecercioRealizado implements Comparable<ExecercioRealizado> {
         this.exercicioId = exercicioId;
     }
 
-    public int getTempo() {
+    public String getTempo() {
         return tempo;
     }
 
-    public void setTempo(int tempo) {
+    public void setTempo(String tempo) {
         this.tempo = tempo;
     }
 

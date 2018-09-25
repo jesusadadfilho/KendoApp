@@ -28,11 +28,11 @@
         <activity android:name=".app.AtividadeActivity" />
         <activity android:name=".app.MainActivity" />
         <activity android:name=".app.ReproducaoActivity" />
-        <activity android:name=".app.ExecicioViewActivity"
-            android:parentActivityName=".app.ExerciciosActivity"/>
-        <activity android:name=".app.itens.ExercicioRealizadoViewHolderActivity">
-
-        </activity>
+        <activity
+            android:name=".app.ExecicioViewActivity"
+            android:parentActivityName=".app.ExerciciosActivity" />
+        <activity android:name=".app.itens.ExercicioRealizadoViewHolderActivity"></activity>
+        <activity android:name=".app.itens.ContagemActivity"></activity>
     </application>
 
 </manifest>

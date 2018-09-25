@@ -1,41 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:layout_margin="3dp"
-    android:elevation="5dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
     tools:context=".app.itens.ExercicioRealizadoViewHolderActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="2">
+    <TextView
+        android:id="@+id/tempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:30"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"/>
 
     <TextView
-        android:id="@+id/nome_exercicio_text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/nome"
-        android:layout_marginTop="10dp"
-        android:textAlignment="center"
-        android:layout_weight="1"
-        android:textColor="@color/colorWhite" />
-
-    <TextView
-        android:id="@+id/data_exercicio_realizado_text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/tempo"
-        android:layout_marginTop="10dp"
-        android:textAlignment="center"
-        android:layout_weight="1"
-        android:textColor="@color/colorWhite" />
-    </LinearLayout>
+        android:id="@+id/data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="06/08/2017 19:40"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"/>
 
 
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
