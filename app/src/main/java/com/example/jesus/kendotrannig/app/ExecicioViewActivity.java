@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.jesus.kendotrannig.R;
 import com.example.jesus.kendotrannig.app.adapters.ExerciciosRealizadosAdapter;
+import com.example.jesus.kendotrannig.app.itens.ContagemActivity;
 import com.example.jesus.kendotrannig.model.ExecercioRealizado;
 
 import java.util.ArrayList;
@@ -68,6 +69,12 @@ public class ExecicioViewActivity extends AppCompatActivity {
 
     public void playVideo(View view) {
         Intent intent = new Intent(this,ReproducaoActivity.class);
+        intent.putExtra("link", link);
+        startActivity(intent);
+    }
+
+    public void iniciarExercicio(View view) {
+        Intent intent = new Intent(this,ContagemActivity.class);
         intent.putExtra("link", link);
         startActivity(intent);
     }

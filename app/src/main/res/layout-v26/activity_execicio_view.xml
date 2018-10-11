@@ -87,11 +87,19 @@
                 android:src="@drawable/ic_play_arrow"
                 android:onClick="playVideo" />
 
+            <ImageButton
+                android:id="@+id/pratice_exercicio"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/play_exercicio"
+                android:src="@drawable/ic_fitness"
+                android:onClick="iniciarExercicio" />
+
             <TextView
                 android:id="@+id/desc_exercicio_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/play_exercicio"/>
+                android:layout_below="@id/pratice_exercicio"/>
 
             <TextView
                 android:id="@+id/progresso"

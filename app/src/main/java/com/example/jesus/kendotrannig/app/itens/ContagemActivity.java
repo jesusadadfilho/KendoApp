@@ -17,8 +17,7 @@ public class ContagemActivity extends YouTubeBaseActivity {
     private Chronometer crono;
     private ImageButton playPauseBtn;
     private YouTubePlayerView youTubePlayerView;
-    private boolean executando;
-    private long time;
+    private long time, timeStop;
     private boolean pause;
 
 
@@ -27,8 +26,9 @@ public class ContagemActivity extends YouTubeBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contagem);
         setupViews();
-        executando = true;
         pause = false;
+        time = 0;
+        timeStop = 0;
     }
 
     private void setupViews() {
@@ -36,20 +36,19 @@ public class ContagemActivity extends YouTubeBaseActivity {
         crono = findViewById(R.id.crono);
     }
 
-    public void playPause(View view) {
-        if(executando){
-            long base = pause ? time :  SystemClock.elapsedRealtime();
-            crono.setBase(base);
+    public void playPause(View view) { //TODO: Realizar stop e reproduzir video
+        if(!pause){
+            crono.setBase(SystemClock.elapsedRealtime() - time);
             crono.start();
-            executando = false;//todo:terminarcronometro
-            pause = false;
-            Toast.makeText(this,"play",Toast.LENGTH_SHORT).show();
-        }else {
             pause = true;
-            time =  Long.valueOf(crono.getBase());
+            Toast.makeText(this,"play" + (time + timeStop),Toast.LENGTH_SHORT).show();
+            playPauseBtn.setImageResource(R.drawable.ic_pause);
+        }else {
+            pause = false;
+            time =  SystemClock.elapsedRealtime() - crono.getBase();
             crono.stop();
-            executando = true;
-            Toast.makeText(this,"pause" + crono.toString(),Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"pause" + time,Toast.LENGTH_SHORT).show();
+            playPauseBtn.setImageResource(R.drawable.ic_play_arrow);
         }
     }
 

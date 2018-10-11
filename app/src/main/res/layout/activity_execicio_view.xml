@@ -113,6 +113,7 @@
                 android:layout_below="@id/pratice_exercicio"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="5dp"
+                android:onClick="iniciarExercicio"
                 android:text="Progresso: "/>
         </RelativeLayout>
 
