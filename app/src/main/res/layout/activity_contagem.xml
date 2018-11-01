@@ -8,9 +8,10 @@
     tools:context=".app.itens.ContagemActivity">
 
     <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youtube_contagem_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/youtube_contagem_view">
+        android:layout_centerVertical="true">
 
     </com.google.android.youtube.player.YouTubePlayerView>
 
@@ -18,36 +19,39 @@
         android:id="@+id/liner_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_below="@id/youtube_contagem_view"
+        android:orientation="horizontal"
         android:weightSum="2">
 
         <ImageButton
             android:id="@+id/play_pause_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_play_arrow"
             android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:onClick="playPause"
-            android:layout_weight="1"/>
+            android:src="@drawable/ic_play_arrow" />
+
         <ImageButton
             android:id="@+id/stop_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_stop"
             android:layout_marginTop="10dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/ic_stop"
+            android:onClick="stop"/>
 
     </LinearLayout>
-
     <Chronometer
         android:id="@+id/crono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/liner_layout"
-        android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
-        android:textSize="30sp"/>
+        android:layout_marginTop="30dp"
+        android:fontFamily="serif-monospace"
+        android:textSize="30sp" />
+
 
 
 </RelativeLayout>

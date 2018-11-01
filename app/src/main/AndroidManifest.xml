@@ -31,8 +31,8 @@
         <activity
             android:name=".app.ExecicioViewActivity"
             android:parentActivityName=".app.ExerciciosActivity" />
-        <activity android:name=".app.itens.ExercicioRealizadoViewHolderActivity"></activity>
-        <activity android:name=".app.itens.ContagemActivity"></activity>
+        <activity android:name=".app.itens.ExercicioRealizadoViewHolderActivity" />
+        <activity android:name=".app.itens.ContagemActivity" />
     </application>
 
 </manifest>

@@ -27,6 +27,7 @@ public class ReproducaoActivity extends YouTubeBaseActivity  {
         FragmentManager fm = getFragmentManager();
         String tag = YouTubePlayerFragment.class.getSimpleName();
         YouTubePlayerFragment playerFragment = (YouTubePlayerFragment) fm.findFragmentByTag(tag);
+
         if (playerFragment == null) {
             FragmentTransaction ft = fm.beginTransaction();
             playerFragment = YouTubePlayerFragment.newInstance();
